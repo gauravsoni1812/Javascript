@@ -1,16 +1,18 @@
-// break and continue statements
-let i=10;
-//  print till 10 but leave 4
-// for(let n=1;n<=10;n++){
-//     if(n===4){  // ye 4 kp chor dega but break 4 ka baad sab ko chor dega
-//         continue;
-//     }
-//     console.log(n);
+// click events on multiple buttons
+const allButtons= document.querySelectorAll("button");
+console.log(allButtons);
+// firstbutton.addEventListener("click", function(){
+//     console.log("You clicked me");
+// })
+// for(let button of allButtons){
+//      button.addEventListener("click",function(){// yahan par arrow funciton mat banana ni to this mai window ajaega ye
+// nahi aega
+//          console.log(this.textContent);  
+//      })
 // }
 
-for(let n=1;n<=10;n++){
-     if(n===4){
-         break;
-     }
-     console.log(n);
+for(let i=0;i<allButtons.length;i++){
+    allButtons[i].addEventListener("click",function(){
+     console.log(this.textContent);
+    })
 }

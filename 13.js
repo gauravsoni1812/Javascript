@@ -1,20 +1,16 @@
-// truthy and falsy values
+//Add new Html elements to page
 
-//falsy 
-// ""
-// null
-// undefined
-// 0
 
-// agr ye values firstname ko dedi then ye sari ki sari false return karengi elsie esko flasy values bola hai
 
-// esko chor ke sab truthy hai if firstname ki koi aisi value hogi jo upar walon ke alawa hogi to vo truthy value hogi
+//innerHTML to add html element
 
-let firstName="";
- 
-if(firstName){
-    console.log(firstName);
-}else{
-    console.log("firstName is kinda empty"); 
-}
- 
+const todoList=document.querySelector(".todo-list");
+console.log(todoList.innerHTML);
+// todoList.innerHTML="<li>New Todo</li>" ye line pura hi 
+// innerhtml change karegi but i want ko todo likha rhe or 
+// naya add hojae
+todoList.innerHTML += "<li>New Todo</li"+ "<li>Teach Students</li>";
+
+// when you should use it , when you should not
+
+// Now es cheez ko kabhi use ni karna hai

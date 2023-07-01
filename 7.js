@@ -1,13 +1,11 @@
-let firstName="        gaURav      ";
+// get multiple elements bu using getElementsbyclassname
+// get multiple elements by using queryselectorAll
+// const navItems=document.getElementsByClassName("nav-item");
+// accha ab ye jo navItems mili hai vo array ke jaisi hai
+// You can access this by the help of the array
 
-firstName=firstName.trim();
+// console.log(navItems[2]);
 
-console.log(firstName);
-
-firstName=firstName.toLowerCase();
-
-console.log(firstName);
-
-console.log(firstName.toUpperCase());
-
-console.log(firstName.slice(0,4));
+const navItems=document.querySelectorAll(".nav-item");
+console.log(navItems);
+// esko bhi ap same as an array treat karsakte ho 

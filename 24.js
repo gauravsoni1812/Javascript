@@ -1,17 +1,16 @@
-// How to clone array 
+const mainbutton=document.querySelector("button"); 
+const body= document.body;
 
-// How to  concatenate two arrays
+function randomcolorGenerator(){
+    const red=Math.floor(Math.random()*256);
+    const blue=Math.floor(Math.random()*256);
+    const green=Math.floor(Math.random()*256);
+    const randomColor = `rgb(${red}, ${green} ,${blue})`;
+    return randomColor; 
+}
 
+mainbutton.addEventListener("click",()=>{
+     const randomcolor=randomcolor();
+     body.style.backgroundColor=randomcolor;
 
-let array1=["item1", "item2"];
-//Now i want to make array2 like array1 such that array1 se array2 mai koi fark na pade
-// let array2 = array1.slice(0).concat(["item3","item4"]);
-
-// let array2 = [].concat(array1,["item3","item4"]);
-let array2= [...array1];
-
-array1.push("item3");
-
-console.log(array1===array2);
-console.log(array1);
-console.log(array2);
+})

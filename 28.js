@@ -1,23 +1,29 @@
-// Array destructuring
+// console.log("hello world")
 
-//  If you want to pickup elements from
-// the array and store it into the variable array destructing can help 
-// you with that
+const grandparent=document.querySelector(".grandparent");
+ 
+// Event deligation
+// grandparent.addEventListener("click",()=>{
+//     console.log("You clicked something");
+// })
 
-const arr=["apple", "bannana","mango"];
+// now if i do click on grandparent it shows you clicked 
+// something but if you click on child you got the same 
+// ans you got by clicking on the grandparent
+// Now fayda ye hai ki apko child parent or grandparent
+// ke lie alag alag eventlistner add karne ki zaroorat niha
 
-// let var1=arr[0];
-// let var2=arr[1]; 
-// console.log("the value of var1 is", var1);
-// console.log("the value of var2 is", var2);
 
-let [var1 ,var2, var3]=arr;
-console.log("the value of var1 is", var1);
-console.log("the value of var2 is", var2);
-console.log("the value of var3 is", var3);
+// But now i want only stuff related to child 
+// So now We gonna be using event Object
 
-// Now lets consider ki you have to make store all the items in the new array of the previous array
-
-let [...myNewArray]=arr;
-
-console.log(arr);
+grandparent.addEventListener("click",(e)=>{
+    // Here in the event object if you go into the target
+    // You got the child if you click on the child
+    console.log(e.target);
+    // accha yahan text content mai you got child 
+    // if you write e.target.textContent
+    // parent child 
+    // grandparent parent child
+    // like this 
+})

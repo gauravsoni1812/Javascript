@@ -1,42 +1,43 @@
 #include <iostream>
 using namespace std;
 #include <bits/stdc++.h>
-struct Node
+bool check_pali(int i, int j, string &str)
 {
-    int data;
-    struct Node *left;
-    struct Node *right;
-};
-
-Node *newNode(int val)
-{
-    Node *temp = new Node;
-    temp->data = val;
-    temp->left = NULL;
-    temp->right = NULL;
-}
-
-void helper(Node *root,vector<vector<int>> &ans, vector<int> &res)
-{
-    if (root == NULL)
+    while (i < j)
     {
-        return;
+        if (str[i] == str[j])
+        {
+            i++, j--;
+        }
+        else
+        {
+            return false;
+        }
     }
-    if (root->left == NULL && root->right == NULL)
-    {
-        ans.push_back(res);
-        return;
-    }
-    res.push_back(root->data);
-    helper(root->left, ans, res);
-    helper(root->right, ans, res);
-    res.pop_back();
+    return true;
 }
-vector<vector<int>> Paths(Node *root)
+int helper(int i, int j, string &str)
 {
-    // Code here
-    vector<vector<int>> ans;
-    vector<int> res;
-    helper(root, ans, res);
+    if (i == j)
+    {
+        return 0;
+    }
+    if (check_pali(i, j, str))
+    {
+        return 0;
+    }
+    int ans = INT_MAX;
+    for (int k = i; k < j; k++)
+    {
+        int a = helper(i + 1, k, str);
+        int b = helper(k + 1, j, str);
+        ans = min(ans, a + b + 1);
+    }
     return ans;
+}
+int palindromicPartition(string str)
+{
+    // code here
+    int n = str.size();
+    return helper(0, n - 1, str);
 }

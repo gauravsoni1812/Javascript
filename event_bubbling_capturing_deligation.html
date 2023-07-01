@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling|capturing|deligation</title>
+    <style>
+*{
+     padding:0;
+     margin:0;
+     box-sizing: border-box;
+}
+
+body{
+     font-family: Arial, Helvetica, sans-serif;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh
+}
+.box{
+    min-width: 100px;
+    min-height: 100px;
+    padding:5rem;
+    font-weight: bold;
+    font-size: 2rem;
+    cursor:pointer;
+}
+.grandparent{
+    background: #b1d4e0;
+    color:black;
+}
+.parent{
+     background:#26689d;
+     color:white;
+}
+.child{
+    background:#133b5b;
+    color:white;
+}
+    </style>
+    <script src="28.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class="grandparent box">
+            Grandparent
+             <div class="parent box">
+                parent
+                <div class="child box">
+                  child
+                </div>
+             </div>
+        </div>
+    </main>
+</body>
+</html>

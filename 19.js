@@ -1,15 +1,22 @@
-// While Loop  and for loops
-let i=1;
-while(i<12){
-    console.log(i);
-    i++;
-}
+// Intro to events
+//  click  
+// Now in my webpage i have a button called learn more
+// i want ki jab usme koi click ho to
+// Event add karne ke 3 tereeke hain 
+const btn=document.querySelector(".btn-headline");
+// console.log(btn);
+// Now i want to see the button in the form of objects so for that i have something called console.dir
+// console.dir(btn);
+// btn.onclick=function(){
+//     console.log("You clicked me !!!!!!!");
+// }es tarike ko use nahi karna hai 
+// Now we have a method which is addEventListener
+// function clickMe(){
+//    console.log("You clicked me");    
+// }
+btn.addEventListener("click",clickMe); //Es line ka matlab hai ki jab bhi click event perform ho clickMe function ko call karna
 
-// sum of 10 natural numbers
-let num=10;
-let sum=0;
-for(let i=0;i<10;i++){
-     sum+=i+1
-}
-console.log(sum);
-console.log(i); //let se bahar access ni hopaegi but var se hojaegi 
+// es tarah se ap events add karsakte hain
+btn.addEventListener("click",function(){
+    console.log("You clicked me");    
+ }); 

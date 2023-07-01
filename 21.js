@@ -1,18 +1,28 @@
-// Intro to arays 
-// refrence type
-// How to create arrays
+// Event Object
+// const firstbutton=document.querySelector("#one");
 
-// if we want to store multiple collections then we use arrays to store that
+// // firstbutton.addEventListener("click",function(event){
+// //      console.log(event);
+// // })
 
-// stored collection of data is known as arrays 
+// jab bhi mai kisi bhi element par event listner add hoga
+// js engine----line by line execute karta hai 
+// browser-----js engine + extra features
+// browser------js engine + WebApi
 
-let fruits=["mango", "apple" , "banana" ,"lichi"];
-let numbers=[1,2,3,4];
-let mixed=[1,2,5, "string", "absolute garbage"]
-console.log(numbers);
-console.log(fruits[1]);
-console.log(mixed);
+// jab browser ko pata chala ki user ne event perform kia 
+// jo hum listen karrhe hai 
+// browser yahan par do kaam karega 
+//  1.) jo callback function hai vo js engine ko dedega
+//  2.) callback function ke sath browser jo event hua hai uski information bhi dega 
+// ye info hame ek object ke form mai milegi 
+// jab ham callback function banaenge tab ham uske argument mai jo paas karenge jo ki event in above example 
+  
+const allButtons= document.querySelectorAll("button");
 
-//Now in order to identify that the data type is the array or not we have something called Array.isArray(fruits);
 
-console.log(Array.isArray(fruits));
+for(let i=0;i<allButtons.length;i++){
+    allButtons[i].addEventListener("click",(event)=>{
+     console.log(event);
+    })
+}
