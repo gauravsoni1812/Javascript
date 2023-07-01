@@ -1,1 +1,1 @@
-lkfnlaks
+console.log("hello world");
